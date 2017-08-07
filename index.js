@@ -9,7 +9,8 @@ const
   port = process.env.PORT || 3001,
   User = require('./models/User.js'),
   jwt = require('jsonwebtoken'),
-  cors = require('cors')
+  cors = require('cors'),
+  Eventbrite = require('eventbrite')
 
 //set up mongoose connection
   mongoose.connect(mongoUrl, (err) => {
@@ -70,6 +71,10 @@ app.post('/authenticate', (req, res) => {
     res.json({success: true, message: "Logged in successfully.", token})
   })
 })
+//
+// app.get('/events', (req, res)=>{
+//   Event.find({
+// })
 
 // all below require valid token
 app.use(verifyToken)
@@ -96,4 +101,4 @@ function verifyToken(req, res, next) {
 }
 
 app.listen(port, (err) => {
-  console.log(err || `Server running on ${port}.`)})
+  console.log(err || `Server running on ${port}.` )})
