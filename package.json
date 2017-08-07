@@ -9,13 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "jsonwebtoken": "^7.4.2",
     "mongoose": "^4.10.8",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "node-eventbrite": "0.0.13"
   }
 }
