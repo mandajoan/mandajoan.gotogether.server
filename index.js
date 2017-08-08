@@ -8,9 +8,14 @@ const
   mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/gotogether',
   port = process.env.PORT || 3001,
   User = require('./models/User.js'),
+  Event = require('./models/Event.js'),
+  eventsRouter = require('./routes/events.js'),
+  Interest = require('./models/Interest.js'),
+  Category = require('./models/Category.js'),
   jwt = require('jsonwebtoken'),
-  cors = require('cors'),
-  Eventbrite = require('eventbrite')
+  cors = require('cors')
+
+
 
 //set up mongoose connection
   mongoose.connect(mongoUrl, (err) => {
@@ -21,6 +26,9 @@ const
   app.use(cors())
   app.use(logger('dev'))
   app.use(bodyParser.json())
+
+//routes
+  app.use('/events', eventsRouter)
 
 //root route
   app.get('/', (req, res) => {
@@ -71,10 +79,7 @@ app.post('/authenticate', (req, res) => {
     res.json({success: true, message: "Logged in successfully.", token})
   })
 })
-//
-// app.get('/events', (req, res)=>{
-//   Event.find({
-// })
+
 
 // all below require valid token
 app.use(verifyToken)

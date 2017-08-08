@@ -5,6 +5,7 @@ const
     name: String,
     title: String,
     email: String,
+    interests: [{type:mongoose.Schema.Types.ObjectId, ref: 'Interest'}],
     password: {type: String, select: false}
   })
 
