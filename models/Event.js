@@ -4,7 +4,7 @@ const
     title: String,
     description: String,
     location: String,
-    category: [{type:mongoose.Schema.Types.ObjectId, ref: 'Category'}],
+    category: [String],
     users: [{type:mongoose.Schema.Types.ObjectId, ref: 'User'}]
   })
 
