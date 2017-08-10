@@ -45,7 +45,13 @@ app.route('/users')
     })
   })
   .post((req, res) => {
-    console.log(req.body)
+    // const userInterests = {}
+    // req.body.interests.forEach(str => {
+    //   userInterests[str] = true
+    // })
+    // Interest.create(userInterests, (err, interest) => {
+    //
+    // })
     User.create(req.body, (err, user) => {
       res.json({success: true, message: "User created.", user})
     })

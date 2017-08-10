@@ -5,7 +5,8 @@ const
     name: String,
     title: String,
     email: String,
-    interests: [{type:mongoose.Schema.Types.ObjectId, ref: 'Interest'}],
+    // interests: [{type:mongoose.Schema.Types.ObjectId, ref: 'Interest'}],
+    interests: [String],
     password: {type: String, select: false}
   })
 
