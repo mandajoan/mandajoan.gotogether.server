@@ -15,7 +15,9 @@ const
   eventsRouter.post('/', (req, res) => {
     const newEvent = new Event(req.body)
     newEvent.save((err, event) => {
-      res.json(event)
+      // res.json(event)
+      if(err) return res.json({success: false, message: "There was a problem creating the event."})
+      res.json({success: true, message: "Event created.", event})
     })
   })
 
