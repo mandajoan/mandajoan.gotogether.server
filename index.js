@@ -45,6 +45,7 @@ app.route('/users')
     })
   })
   .post((req, res) => {
+    console.log(req.body)
     User.create(req.body, (err, user) => {
       res.json({success: true, message: "User created.", user})
     })
