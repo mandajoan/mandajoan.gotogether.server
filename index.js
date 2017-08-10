@@ -73,6 +73,11 @@ app.route('/users/:id')
       })
     })
   })
+  // .delete((req, res)=>{
+  //   User.findByIdAndRemove(req.params.id, (err, user) =>{
+  //
+  //   })
+  // })
 
 // the Log In route:
 app.post('/authenticate', (req, res) => {
