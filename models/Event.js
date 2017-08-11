@@ -5,6 +5,7 @@ const
     description: String,
     location: String,
     category: [String],
+    date:[String],
     users: [{type:mongoose.Schema.Types.ObjectId, ref: 'User'}]
   })
 
