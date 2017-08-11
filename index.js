@@ -71,16 +71,17 @@ app.route('/users/:id')
       user.save((err, updatedUser) => {
         const userData = updatedUser.toObject()
         delete userData.password
-        const token = jwt.sign(updatedUser, process.env.SECRET)
+        const token = jwt.sign(userData, process.env.SECRET)
         res.json({success: true, message: "User updated.", user: updatedUser, token})
       })
     })
   })
-  // .delete((req, res)=>{
-  //   User.findByIdAndRemove(req.params.id, (err, user) =>{
-  //
-  //   })
-  // })
+  .delete((req, res)=>{
+    User.findByIdAndRemove(req.params.id, (err, user) =>{
+      if(err) return console.log(err)
+      res.json({success: true, message: "User deleted"})
+    })
+  })
 
 // the Log In route:
 app.post('/authenticate', (req, res) => {
