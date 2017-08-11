@@ -69,6 +69,8 @@ app.route('/users/:id')
     User.findById(req.params.id, (err, user) => {
       Object.assign(user, req.body)
       user.save((err, updatedUser) => {
+        const userData = updatedUser.toObject()
+        delete userData.password
         const token = jwt.sign(updatedUser, process.env.SECRET)
         res.json({success: true, message: "User updated.", user: updatedUser, token})
       })
