@@ -1,4 +1,4 @@
-![Logo](/.go-together/public/logo.png)
+
 
  ### *Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
 
@@ -39,7 +39,7 @@
 ##### User Model (Full CRUD)
 ##### Event Model  
 
-![ERD Diagram](/Users/dearman/Desktop/project_4/go-together/public/erd.png)
+
 
 <hr>
 ## UX Design
@@ -47,9 +47,7 @@
 
 #### The goal was to keep as much on one page as possible.
 
-##### Wireframe Design:
 
-![Wireframe](/Users/dearman/Desktop/project_4/go-together/public/wireframe.png)
 
 <hr>
 
